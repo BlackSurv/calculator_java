@@ -1,7 +1,5 @@
 import java.util.*;
 
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
 public class Main {
 
     public static void main(String[] args) throws Exception  {
@@ -9,7 +7,6 @@ public class Main {
         System.out.println("Введите математическое выражение с использованием двух арабских (2+3) или двух римских чисел (II+VI) от I до X и нажмите Enter: ");
         String userInput = scanner.nextLine();
         System.out.println(calc(userInput));
-
     }
 
     public static String calc(String input) throws Exception  {
@@ -68,11 +65,10 @@ public class Main {
         } else {
             result=String.valueOf(arabianResult);
         }
-
     return result;
     }
-    static class RomanNumbers {
 
+    static class RomanNumbers {
         static String[] arrRomanNum = new String[]{
                 "0", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI",
                 "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "XIX", "XX", "XXI", "XXII", "XXIII", "XXIV",
@@ -84,21 +80,15 @@ public class Main {
                 "LXXXVI", "LXXXVII", "LXXXVIII", "LXXXIX", "XC", "XCI", "XCII", "XCIII", "XCIV", "XCV", "XCVI", "XCVII",
                 "XCVIII", "XCIX", "C"
         };
-        public static boolean isRoman(String number){
-            try {
-                int testNumber = Integer.parseInt(number);
-                return  false;
-            } catch (NumberFormatException e){
-                return true;
+        static boolean isRoman(String number){
+            for (String s : arrRomanNum) {
+                if (number.equals(s)) {
+                    return true;
+                }
             }
-//            for (String s : arrRomanNum) {
-//                if (number.equals(s)) {
-//                    return true;
-//                }
-//            }
-//            return false;
+            return false;
         }
-        public static int convToArab (String romanNumber) {
+        static int convToArab(String romanNumber) {
             for (int i = 0; i < arrRomanNum.length; i++) {
                 if (romanNumber.equals(arrRomanNum[i])){
                     return i;
@@ -106,7 +96,7 @@ public class Main {
             }
             return -1;
         }
-        public static String convertToRoman(int arabian) {
+        static String convertToRoman(int arabian) {
             return arrRomanNum[arabian];
         }
     }
