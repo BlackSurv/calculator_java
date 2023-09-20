@@ -11,38 +11,6 @@ public class Main {
         System.out.println(calc(userInput));
 
     }
-    static class RomanNumbers {
-        static String[] arrRomanNum = new String[]{
-                "0", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI",
-                "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "XIX", "XX", "XXI", "XXII", "XXIII", "XXIV",
-                "XXV", "XXVI", "XXVII", "XXVIII", "XXIX", "XXX", "XXXI", "XXXII", "XXXIII", "XXXIV", "XXXV", "XXXVI",
-                "XXXVII", "XXXVIII", "XXXIX", "XL", "XLI", "XLII", "XLIII", "XLIV", "XLV", "XLVI", "XLVII", "XLVIII",
-                "XLIX", "L", "LI", "LII", "LIII", "LIV", "LV", "LVI", "LVII", "LVIII", "LIX", "LX", "LXI", "LXII",
-                "LXIII", "LXIV", "LXV", "LXVI", "LXVII", "LXVIII", "LXIX", "LXX", "LXXI", "LXXII", "LXXIII", "LXXIV",
-                "LXXV", "LXXVI", "LXXVII", "LXXVIII", "LXXIX", "LXXX", "LXXXI", "LXXXII", "LXXXIII", "LXXXIV", "LXXXV",
-                "LXXXVI", "LXXXVII", "LXXXVIII", "LXXXIX", "XC", "XCI", "XCII", "XCIII", "XCIV", "XCV", "XCVI", "XCVII",
-                "XCVIII", "XCIX", "C"
-        };
-        public static boolean isRoman(String number){
-            for (String s : arrRomanNum) {
-                if (number.equals(s)) {
-                    return true;
-                }
-            }
-            return false;
-        }
-        public static int convToArab (String romanNumber) {
-            for (int i = 0; i < arrRomanNum.length; i++) {
-                if (romanNumber.equals(arrRomanNum[i])){
-                    return i;
-                }
-            }
-        return -1;
-        }
-        public static String convertToRoman(int arabian) {
-            return arrRomanNum[arabian];
-        }
-    }
 
     public static String calc(String input) throws Exception  {
         String [] actions = {"+","-","/","*"};
@@ -102,5 +70,44 @@ public class Main {
         }
 
     return result;
+    }
+    static class RomanNumbers {
+
+        static String[] arrRomanNum = new String[]{
+                "0", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI",
+                "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "XIX", "XX", "XXI", "XXII", "XXIII", "XXIV",
+                "XXV", "XXVI", "XXVII", "XXVIII", "XXIX", "XXX", "XXXI", "XXXII", "XXXIII", "XXXIV", "XXXV", "XXXVI",
+                "XXXVII", "XXXVIII", "XXXIX", "XL", "XLI", "XLII", "XLIII", "XLIV", "XLV", "XLVI", "XLVII", "XLVIII",
+                "XLIX", "L", "LI", "LII", "LIII", "LIV", "LV", "LVI", "LVII", "LVIII", "LIX", "LX", "LXI", "LXII",
+                "LXIII", "LXIV", "LXV", "LXVI", "LXVII", "LXVIII", "LXIX", "LXX", "LXXI", "LXXII", "LXXIII", "LXXIV",
+                "LXXV", "LXXVI", "LXXVII", "LXXVIII", "LXXIX", "LXXX", "LXXXI", "LXXXII", "LXXXIII", "LXXXIV", "LXXXV",
+                "LXXXVI", "LXXXVII", "LXXXVIII", "LXXXIX", "XC", "XCI", "XCII", "XCIII", "XCIV", "XCV", "XCVI", "XCVII",
+                "XCVIII", "XCIX", "C"
+        };
+        public static boolean isRoman(String number){
+            try {
+                int testNumber = Integer.parseInt(number);
+                return  false;
+            } catch (NumberFormatException e){
+                return true;
+            }
+//            for (String s : arrRomanNum) {
+//                if (number.equals(s)) {
+//                    return true;
+//                }
+//            }
+//            return false;
+        }
+        public static int convToArab (String romanNumber) {
+            for (int i = 0; i < arrRomanNum.length; i++) {
+                if (romanNumber.equals(arrRomanNum[i])){
+                    return i;
+                }
+            }
+            return -1;
+        }
+        public static String convertToRoman(int arabian) {
+            return arrRomanNum[arabian];
+        }
     }
 }
