@@ -28,7 +28,8 @@ public class Main {
         }
         //Ищем операнды
         //String[] numbers = input.split(operation);
-        String[] numbers = input.split("[\\+-/\\*]");
+        String[] numbers = input.split(" [\\+-/\\*] ");
+        //String[] numbers = input.split("[^XVILC\\d]");
         if (numbers.length != 2) {
             throw new Exception( "Должно быть два операнда");
         }
